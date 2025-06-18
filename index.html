@@ -1,30 +1,49 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Медиа Юг</title>
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            overflow-y: auto;
-            background-color: #ffffff;
-        }
-        .image-container {
-            width: 100%;
-        }
-        .image-container img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Медиа Юг</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Медиа Юг - карта уникальных пространств Ростова-на-Дону">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: #ffffff;
+      scroll-behavior: smooth;
+      font-family: sans-serif;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+    }
+    .main-image {
+      width: 100%;
+      max-width: 1728px; /* можно убрать ограничение, если надо на весь экран */
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    .main-image.loaded {
+      opacity: 1;
+    }
+  </style>
 </head>
 <body>
-    <div class="image-container">
-        <img src="media_yug.png" alt="Медиа Юг">
-    </div>
+  <div class="container">
+    <img src="media_yug.png" alt="Media Yug" class="main-image">
+  </div>
+
+  <script>
+    const img = document.querySelector('.main-image');
+    if (img.complete) {
+      img.classList.add('loaded');
+    } else {
+      img.onload = () => img.classList.add('loaded');
+    }
+  </script>
 </body>
 </html>
