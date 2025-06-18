@@ -1,26 +1,30 @@
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>Медиа Юг</title>
-  <style>
-    body {
-      margin: 0;
-      background: #ffffff;
-      display: flex;
-      justify-content: center;
-    }
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Медиа Юг</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow-y: auto;
+            background-color: #ffffff;
+        }
+        .image-container {
+            width: 100%;
+        }
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    </style>
 </head>
 <body>
-
-  <img src="media_yug.png" alt="Медиа карта Юг">
-
+    <div class="image-container">
+        <img src="media_yug.png" alt="Медиа Юг">
+    </div>
 </body>
 </html>
